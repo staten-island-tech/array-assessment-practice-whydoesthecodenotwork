@@ -137,10 +137,12 @@ console.log(
 //was every book published within the last 100 years?
 console.log("was every book published within the last 100 years?");
 console.log(
-	books.filter((item) => year - item.publishDate <= 100).length ===
+	/* 	books.filter((item) => year - item.publishDate <= 100).length ===
 		books.length
 		? "yes"
-		: "no"
+		: "no" */
+	// this works, but i just found out .every exists.
+	books.every((item) => year - item.publishDate <= 100) ? "yes" : "no"
 );
 
 //print a list of books that "includes" the genre historical
